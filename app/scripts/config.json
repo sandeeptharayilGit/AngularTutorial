@@ -1,0 +1,75 @@
+{
+	"Common": {
+		"AppConstants": {
+			"APP_NAME": "populationApp",
+			"APP_VERSION": "0.1"
+		},
+		"Messages": {
+			"LOGIN_ERROR": "Error in Login"
+		},
+		"PeripheralConstants": {
+			"SCANNER_ID": "Scanner1"
+		}
+	},
+	"Global": {
+		"Routes": {
+			"otherwise": {
+				"redirectTo": "/login"
+			},
+			"/login": {
+				"settings": {
+					"templateUrl": "views/login.html",
+					"controller": "populationApp-loginCntrl"
+				},
+				"config": {
+					"header": "",
+					"bodyColor": "gray"
+				}
+			},
+			"/cart": {
+				"settings": {
+					"templateUrl": "views/cart.html",
+					"controller": "populationApp-cartCntrl"
+				},
+				"config": {
+					"header": "",
+					"bodyColor": "gray"
+				}
+			},
+			"/checkout": {
+				"settings": {
+					"templateUrl": "views/checkout.html",
+					"controller": "populationApp-checkoutCntrl"
+				},
+				"config": {
+					"header": "",
+					"bodyColor": "gray"
+				}
+			}
+		}
+	},
+	"Env": {
+		"app": {
+			"ApiConstants": {
+				"BASE_URL": "http://abc.pqr.com:8180/xyz/",
+				"API_DETAILS": {
+					"login": {
+						"url": "login/Action",
+						"method": "POST"
+					}
+				}
+			}
+		},
+		"debug": {
+			"ApiConstants": {
+				"BASE_URL": "/scripts/json/",
+				"API_DETAILS": {
+					"login": {
+						"url": "login.json",
+						"method": "POST"
+					}
+				}
+			}
+		}
+	}
+}
