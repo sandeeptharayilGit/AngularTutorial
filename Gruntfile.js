@@ -1,7 +1,7 @@
 var qs = require('querystring');
 var fs = require('fs');
 var LIVERELOAD_PORT = 35729;
-var log4js,logger,isLoggerLoaded=false,
+var log4js,logger,isLoggerLoaded=true,
 loggerName='appLogger',LEVEL='INFO',log4jsConf='log4js_configuration.json';
 var generateApp = function(data) {
 	console.log(data);
@@ -216,7 +216,7 @@ module.exports = function(grunt) {
 						console.log('logger inialised for '+loggerName);
 					}
 
-					return [ require('connect-livereload')(),mountLogger(logger), mountFolder(connect, options.base)];
+					return [ require('connect-livereload')(), mountFolder(connect, options.base)];
 				}
 			}
 		},
@@ -241,7 +241,7 @@ grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-html-build');
 
-grunt.registerTask('server', [ 'connect:server','watch' ]);
+grunt.registerTask('server', [ 'connect:server' ]);
 grunt.registerTask('generator', [ 'connect:generator' ]);
 grunt.registerTask('build', [ 'copy:all', 'cssmin', 'htmlbuild','wiredep' ]);
 grunt.registerTask('default', [ 'server' ]);
