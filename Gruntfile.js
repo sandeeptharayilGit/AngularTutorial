@@ -241,7 +241,7 @@ grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-html-build');
 
-grunt.registerTask('server', [ 'connect:server','watch' ]);
+grunt.registerTask('server', [ 'connect:server' ]);
 grunt.registerTask('generator', [ 'connect:generator' ]);
 grunt.registerTask('build', [ 'copy:all', 'cssmin', 'htmlbuild','wiredep' ]);
 grunt.registerTask('default', [ 'server' ]);
