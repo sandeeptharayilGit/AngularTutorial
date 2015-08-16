@@ -175,26 +175,6 @@ module.exports = function(grunt) {
 				debounceDelay: 250,
 				livereload: LIVERELOAD_PORT,
 				cwd : '<%= srcFolder %>/'
-			},
-			scripts: {
-				files: ['scripts/{,*/}/*.js'],
-				tasks: ['copy:js', 'htmlbuild','wiredep']
-			},
-			css: {
-				files: ['styles/*.css'],
-				tasks: ['cssmin']
-			},
-			htmls: {
-				files: ['views/**'],
-				tasks: ['copy:htmls']
-			},
-			indexhtml: {
-				files: ['index.html'],
-				tasks: ['copy:indexhtml','htmlbuild','wiredep']
-			},
-			others: {
-				files: ['images/**', 'scripts/*.json','scripts/**/*.json'],
-				tasks: ['copy:others' ]
 			}
 	},
 	connect : {
@@ -241,7 +221,7 @@ grunt.loadNpmTasks('grunt-contrib-copy');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-html-build');
 
-grunt.registerTask('server', [ 'connect:server' ]);
+grunt.registerTask('server', [ 'connect:server', 'watch' ]);
 grunt.registerTask('generator', [ 'connect:generator' ]);
 grunt.registerTask('build', [ 'copy:all', 'cssmin', 'htmlbuild','wiredep' ]);
 grunt.registerTask('default', [ 'server' ]);
