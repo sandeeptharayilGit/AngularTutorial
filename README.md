@@ -1,8 +1,3 @@
-AngularTutorial --> PopulationMatrix
-
-
-
-
 # AngularTutorial 
 
 ### Tech
